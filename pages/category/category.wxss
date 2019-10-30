@@ -31,3 +31,29 @@
   top: 20rpx;
   left: 1px;
 }
+.content{
+  flex: 1;
+  padding: 20rpx;
+  overflow-y: auto;
+}
+.brand-title{
+  margin: 30rpx 0;
+  text-align: center;
+}
+.brand{
+  display: flex;
+  flex-wrap: wrap;
+}
+.brand-item{
+  width: 33.33%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.brand-item image{
+  width:100%;
+  max-height: 200rpx;
+}
+.brand-text{
+  font-size: 12px;
+  text-align: center;
+}
