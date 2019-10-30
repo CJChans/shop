@@ -1,13 +1,6 @@
 <!--index.wxml-->
 <!-- 搜索框 -->
-<!-- 搜索栏 -->
-<view class="search">
-  <view class="search-input">
-  <!-- 小程序原生的组件 -->
-    <icon type="search" size="16"></icon>
-    搜索
-  </view>
-</view> 
+<search/>
 <!-- 轮播图 -->
 <!-- indicator-dots是否显示面板指示点 -->
 <!-- block不会渲染到页面上，只是用来循环 -->
