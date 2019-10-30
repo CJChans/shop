@@ -25,3 +25,20 @@
     <image src="{{item.image_src}}"></image>
   </navigator>
 </view>
+
+<!-- 楼层列表 -->
+<view class="floor-title">
+   <image mode="aspectFill" src="https://cdn.pinduoduo.com/home/static/img/index/banner.jpg"></image>
+</view>
+<view class="floor">
+  <view class="left">
+    <navigator src="">
+      <image mode="aspectFill" src="https://img11.360buyimg.com/babel/s580x740_jfs/t1/66369/22/14161/29601/5db85118E5505db15/a286de753ad4f716.jpg!cc_290x370.webp"></image>
+    </navigator>
+  </view>
+  <view class="right">
+    <navigator src="" wx:for="{{[6,6,6,6]}}">
+      <image mode="aspectFill" src="https://cdn.pinduoduo.com/home/static/img/subject/food.jpg"></image>
+    </navigator>
+  </view>
+</view>
