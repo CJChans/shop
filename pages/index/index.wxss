@@ -1,28 +1,38 @@
 /**index.wxss**/
-.search-bg{
-  position: relative;
-  padding: 20rpx 16rpx 0 16rpx;
-  height: 80rpx;
-  background-color: #3880f7;
+.search{
+  background:#3880f7;
+  padding: 20rpx;
 }
-.search-bg .input{
-  height: 60rpx;
-  width: 718rpx;
-  border-radius: 5px;
-  background-color: #fff;
+
+.search .search-input{
+  background: #fff;
+  height:60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color:#999;
+  border-radius: 4px;
 }
-.search-bg .search{
-  position: absolute;
-  left: 340rpx;
-  top:30rpx;
-  vertical-align: middle;
+
+.search .search-input icon{
+  margin-right:10rpx;
 }
-.search .iconsearch{
-  margin-right: 16rpx;
-  color: #bbb;
-  font-size: 24rpx;
+
+/* 轮播图 */
+swiper image{
+  width: 100%;
+  height: 100%;
 }
-.search .search-text{
-  color: #bbb;
-  font-size: 24rpx;
+
+/* 导航栏 */
+.menus{
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx 0;
+}
+
+.menus image{
+  width: 128rpx;
+  height: 140rpx;
 }

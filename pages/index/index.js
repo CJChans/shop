@@ -1,52 +1,32 @@
 //index.js
 import request from "../../utils/request.js"
 Page({
-  onLoad(){
+  data:{
+    swiper:[],
+    menus:[],
+  },
+  onLoad(options){
+    //请求轮播图数据
     request({
-      url:"/api/public/v1/home/swiperdata",
-      success:(res => {
-        console.log(res,123)
+      url:"/api/public/v1/home/swiperdata",     
+    }).then(res=>{
+        const {message} = res.data
+        this.setData({
+          swiper: message
+        })
+
+    }),
+    //请求导航栏数据
+      request({
+      url: "/api/public/v1/home/catitems",
+      }).then(res => {
+        console.log(res)
+        const { message } = res.data
+        this.setData({
+          menus: message
+        })
+
       })
-    })
-    
-  },
-  onShareAppMessage() {
-    return {
-      title: 'swiper',
-      path: 'page/component/pages/swiper/swiper'
-    }
   },
 
-  data: {
-    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
-    indicatorDots: true,
-    vertical: false,
-    autoplay: false,
-    interval: 2000,
-    duration: 500
-  },
-
-  changeIndicatorDots() {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
-
-  changeAutoplay() {
-    this.setData({
-      autoplay: !this.data.autoplay
-    })
-  },
-
-  intervalChange(e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-
-  durationChange(e) {
-    this.setData({
-      duration: e.detail.value
-    })
-  }
 })
