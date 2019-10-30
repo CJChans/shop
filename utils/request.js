@@ -44,7 +44,9 @@ const request = (config)=>{
         },
         //不管成功或者失败都会执行
         complete(res){
-          request.errors(res)
+          if (request.errors=='function'){
+            request.errors(res)
+          }        
         }
       })
     })
