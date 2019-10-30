@@ -1,2 +1,18 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<search/>
+
+<view class="container">
+    <view class="menu">
+        <view
+          class="menu-item {{current==index?'active':''}}"
+          wx:for="{{ [6,6,6,6,6,6,6,6,6,6,6,6,6] }}"
+          wx:key="{{index}}"
+          bindtap="handleChange"
+          data-index="{{index}}">
+          电器{{index}}
+        </view>
+    </view>
+    <view class="content">
+        内容
+    </view>
+</view>

@@ -1,1 +1,33 @@
 /* pages/category/category.wxss */
+.container{
+  display: flex;
+  position: fixed;
+  top: 100rpx;
+  bottom: 0;
+}
+.container .menu{
+  width: 200rpx;
+  height: 100%;
+  background: #eee;
+  overflow-y: auto;
+}
+.container .menu .menu-item{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.menu .active{
+  background-color: #fff;
+  color:#3880f7;
+  position: relative;
+}
+.active::before{
+  display: block;
+  content: "";
+  width: 3px;
+  height: 60rpx;
+  background: #3880f7;
+  position: absolute;
+  top: 20rpx;
+  left: 1px;
+}
