@@ -50,6 +50,7 @@
 }
 .goods-title{
   font-size: 14px;
+  
   text-overflow:ellipsis;
   display:-webkit-box;
   overflow: hidden;

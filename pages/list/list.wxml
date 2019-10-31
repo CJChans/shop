@@ -15,7 +15,7 @@
 </view>
 
 <!-- 可以循环的商品列表 -->
-<navigator url="" class="goods-item" wx:for="{{goods}}" wx:key="{{index}}">
+<navigator url="/pages/goods_detail/index?detail_id={{item.goods_id}}" class="goods-item" wx:for="{{goods}}" wx:key="{{index}}">
   <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>
 
   <!-- 商品列表的右侧 -->
