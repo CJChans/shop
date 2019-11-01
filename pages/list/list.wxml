@@ -1,10 +1,10 @@
 <!--pages/list/list.wxml-->
 <view class="search">
-  <view class="search-input">
+  <navigator url="../search/index" class="search-input">
   <!-- 小程序原生的组件 -->
     <icon type="search" size="16"></icon>
     {{query.query}}
-  </view>
+  </navigator> 
 </view>
 
 <!-- 头部排序 -->

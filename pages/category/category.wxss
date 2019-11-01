@@ -41,6 +41,10 @@
   margin: 30rpx 0;
   text-align: center;
 }
+.brand-title text{
+  color: #eee;
+  margin: 0 20rpx;
+}
 .brand{
   display: flex;
   flex-wrap: wrap;
