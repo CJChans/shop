@@ -48,8 +48,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/category/category",
-					"pathName": "pages/category/category",
+					"name": "pages/search/index",
+					"pathName": "pages/search/index",
 					"query": "detail_id=43982",
 					"scene": null
 				}
