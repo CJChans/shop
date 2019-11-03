@@ -96,7 +96,7 @@
 
 .info-price{
   font-size: 16px;
-  color:red;
+  color:#3880f7;
 }
 
 .info-num{
@@ -149,7 +149,7 @@
 }
 
 .footer-center text{
-  color:red;
+  color:#3880f7;
 }
 
 .checkout{
@@ -157,6 +157,11 @@
   height: 100rpx;
   line-height:100rpx;
   text-align: center;
-  background:red;
+  background:#3880f7;
   color:white;
-} 
+}
+
+.empty{
+  padding: 20rpx;
+  color: #3880f7;
+}

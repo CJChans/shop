@@ -2,12 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/category/category",
-    "pages/cart/cart",
     "pages/personal/personal",
     "pages/list/list",
     "pages/goods_detail/index",
     "pages/search/index",
-    "pages/car/index"
+    "pages/cart/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,7 +33,7 @@
         "selectedIconPath": "./images/icon_category_active@3x.png"
       },
       {
-        "pagePath": "pages/cart/cart",
+        "pagePath": "pages/cart/index",
         "text": "购物车",
         "iconPath": "./images/icon_cart@3x.png",
         "selectedIconPath": "./images/icon_cart_active@3x.png"

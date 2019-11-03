@@ -7,6 +7,7 @@ Page({
   data: {
     // 收货地址
     address: {},
+    goods:null
   },
 
   /**
@@ -29,6 +30,13 @@ Page({
         })
       }
     })
+  },
+  onShow(){
+    const goods = wx.getStorageSync("goods") || null;
+    this.setData({
+      goods
+    })
+    console.log(goods)
   }
 
 })
