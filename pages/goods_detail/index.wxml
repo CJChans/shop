@@ -35,14 +35,14 @@
     <view>购物车</view>
   </navigator>
 
-  <navigator url="../car/index" class="btn-right">
+  <view class="btn-right" bindtap="handleAddCar">
     
     加入购物车
   
-  </navigator>
-  <navigator url="../car/index" class="btn-right">
+  </view>
+  <view class="btn-right" bindtap="handleAddCar">
  
     立即购买
-    </navigator>
+    </view>
   
 </view> 
