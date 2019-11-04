@@ -56,8 +56,8 @@
 
   <!-- 底部布局 -->
   <view class="footer">
-  <view class="footer-left">
-    <icon type="success" color="#3880f7" size="14"></icon> 全选
+  <view class="footer-left" bindtap="handleAllSelectedEvent">
+    <icon type="success" color="{{ allSelected ? '#3880f7' : 'gray' }}" size="14"></icon> 全选
   </view>
 
   <view class="footer-center">
