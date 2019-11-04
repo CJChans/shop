@@ -7,22 +7,22 @@ Page({
   data: {
     // 收货地址
     address: {},
-    goods:null,
+    goods: false,
     // 总价格
     allPrice: 0,
-    allSelected:true
+    allSelected: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
-  handleAddress(){
+  handleAddress() {
     wx.chooseAddress({
-      success:(res)=> {
+      success: (res) => {
         // 设置收货地址
         this.setData({
           address: {
@@ -34,8 +34,8 @@ Page({
       }
     })
   },
-  onShow(){
-    const goods = wx.getStorageSync("goods") || null;
+  onShow() {
+    const goods = wx.getStorageSync("goods") || false;
     this.setData({
       goods
     })
@@ -47,18 +47,27 @@ Page({
   },
 
   //数量减一
-  handleReduce(event){
-    const { id } = event.target.dataset
-    const { goods } = this.data
+  handleReduce(event) {
+    const {
+      id
+    } = event.target.dataset
+    let {
+      goods
+    } = this.data
 
-    if (goods[id].number<=1){
+    if (goods[id].number <= 1) {
       wx.showModal({
         title: '提示',
         content: '确定删除该商品？',
-        success(res) {
+        success: (res) => {
           if (res.confirm) {
             //删除改商品
-           delete goods[id]
+            delete goods[id]
+            // 判断对象是否是一个空对象
+            if (Object.keys(goods).length === 0) {
+              goods = false
+            }
+
 
             //修改data的值
             this.setData({
@@ -72,7 +81,7 @@ Page({
           }
         }
       })
-    }else{
+    } else {
       //数量减一
       goods[id].number -= 1;
       //修改data的值
@@ -84,15 +93,19 @@ Page({
       wx.setStorageSync("goods", goods)
       // 计算总价格
       this.handleAllPrice();
-    }  
+    }
   },
 
   //输入框输入数量
-  bandChange(event){
-    console.log(event,66)
+  bandChange(event) {
+    console.log(event, 66)
     const value = +event.detail.value
-    const { id } = event.target.dataset
-    const { goods } = this.data
+    const {
+      id
+    } = event.target.dataset
+    const {
+      goods
+    } = this.data
 
     // 判断是否有小数点
     goods[id].number = Math.floor(value);
@@ -108,13 +121,17 @@ Page({
   },
 
 
-  
+
 
   //数量加一
-  handleAdd(event){
+  handleAdd(event) {
     // console.log(event,3636)
-    const {id} = event.target.dataset
-    const {goods} = this.data
+    const {
+      id
+    } = event.target.dataset
+    const {
+      goods
+    } = this.data
 
     //数量加一
     goods[id].number += 1;
@@ -130,11 +147,15 @@ Page({
     this.handleAllPrice();
   },
 
-// 选中状态取反
-  handleSelected(event){
+  // 选中状态取反
+  handleSelected(event) {
     console.log(event)
-    const { id } = event.target.dataset;
-    const { goods } = this.data;
+    const {
+      id
+    } = event.target.dataset;
+    const {
+      goods
+    } = this.data;
 
     // 把选中状态取反
     goods[id].selected = !goods[id].selected;
@@ -153,7 +174,9 @@ Page({
 
   // 注意小程序没有computed属性，所以需要封装计算总价格的函数
   handleAllPrice() {
-    const { goods } = this.data;
+    const {
+      goods
+    } = this.data;
     let price = 0;
 
     // 开始计算, v就是key，也就是商品id
@@ -172,7 +195,9 @@ Page({
 
   // 全选状态
   handleAllSelected() {
-    const { goods } = this.data;
+    const {
+      goods
+    } = this.data;
     let isSelect = true;
 
     // 判断是否有一个是没选中
@@ -188,7 +213,10 @@ Page({
   },
   // 点击全选按钮的事件
   handleAllSelectedEvent() {
-    const { goods, allSelected } = this.data;
+    const {
+      goods,
+      allSelected
+    } = this.data;
 
     // 循环取反选中状态，取反是根据allSelected
     Object.keys(goods).forEach(v => {
@@ -204,5 +232,18 @@ Page({
     wx.setStorageSync("goods", goods);
     // 计算总价格
     this.handleAllPrice();
+  },
+
+  handleSubmit() {
+    if (wx.getStorageSync("token")) {
+      wx.navigateTo({
+        url: '/pages/order_enter/index',
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/auth/index',
+      })
+    }
+
   }
 })

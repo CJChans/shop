@@ -19,15 +19,15 @@
     收货地址：{{address.detail}}
   </view>
   <image src="../../images/cart_border@2x.png" mode="aspectFill"></image>
-</view> 
+</view>
 <!-- 购物车列表布局 -->
 <!-- 购物车为空 -->
-<view  wx:if="{{!goods}}" class="empty">购物车为空！请去添加商品...</view>
+<view wx:if="{{!goods}}" class="empty">购物车为空！请去添加商品...</view>
 <!-- 购物车有数据 -->
-<view class="goods-list" wx:if="{{goods}}">
+<view class="goods-list" wx:else>
   <view class="goods-item" wx:for="{{goods}}" wx:key="{{index}}">
     <!-- 左侧的选中的状态 -->
-    <icon type="success" color="{{ item.selected ? '#3880f7': 'gray' }}"  size="14" bindtap="handleSelected" data-id="{{ item.goods_id }}"></icon>
+    <icon type="success" color="{{ item.selected ? '#3880f7': 'gray' }}" size="14" bindtap="handleSelected" data-id="{{ item.goods_id }}"></icon>
 
     <!-- 右侧的详细信息 -->
     <view class="goods-info">
@@ -52,20 +52,22 @@
       </view>
     </view>
   </view>
-  </view>
+</view>
 
-  <!-- 底部布局 -->
-  <view class="footer">
+<!-- 底部布局 -->
+<view class="footer">
   <view class="footer-left" bindtap="handleAllSelectedEvent">
     <icon type="success" color="{{ allSelected ? '#3880f7' : 'gray' }}" size="14"></icon> 全选
   </view>
 
   <view class="footer-center">
-    <view class="top">合计: <text>￥ {{allPrice}}</text></view>
+    <view class="top">合计:
+      <text>￥ {{allPrice}}</text>
+    </view>
     <view class="btm">包含运费</view>
   </view>
 
-  <view class="checkout">
+  <view class="checkout" bindtap="handleSubmit">
     结算
   </view>
-</view> 
+</view>
